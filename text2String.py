@@ -24,19 +24,19 @@ def clear():
     text2.delete("1.0","end")
     
 def convert():
-    print("convert pressed")
+    print("convert pressed ")
     rawString=repr(text1.get("1.0","end"))
     rawString=rawString.replace("\'" , chr(92)+chr(39))
     rawString=rawString.replace("\"" , chr(92)+chr(34))
     rawString=rawString[2:-2]
     text2.delete("1.0","end")
-    text2.insert("insert",rawString)
+    text2.insert("insert",rawString[:-2])
     print("\nHere's your string:\n\n"+rawString+"\n")
     
 def copy():
     print("copy pressed")
     root.clipboard_clear()
-    root.clipboard_append(text2.get("1.0","end"))
+    root.clipboard_append(text2.get("1.0","end")[:-1])
     print(text2.get("1.0","end")+"\ncopied to clipboard.")
     
 def close():
