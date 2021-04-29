@@ -1,14 +1,14 @@
-from tkinter import Tk
-from tkinter import Button
-from tkinter import Text
-from tkinter import Frame
+from tkinter2 import Tk
+from tkinter2 import Button
+from tkinter2 import Text
+from tkinter2 import Frame
 
 # test2String.py
 # a program to convert text a into formatted string 
 #
 # Gary Davenport
 # garydavenport73@gmail.com
-# 2/25/2021
+# 4/29/2021
 
 def paste():
     print("paste pressed")
@@ -51,11 +51,15 @@ bottomframe=Frame(root)
 topframe.pack(fill="both",expand=1)
 bottomframe.pack(fill="x")
 
+topframe.columnconfigure(0, weight=1)
+topframe.columnconfigure(1, weight=1)
+topframe.rowconfigure(0, weight=1)
+
 text1=Text(topframe, width=34)
 text2=Text(topframe, width=34)
 
-text1.pack(fill="both",expand=1,side="left")
-text2.pack(fill="both",expand=1,side="right")
+text1.grid(column=0, row=0, sticky='nsew')
+text2.grid(column=1, row=0, sticky='nsew')
 
 btnPaste=Button(bottomframe,text="Paste", width=14, command=paste)
 btnClear=Button(bottomframe,text="Clear", width=14, command=clear)
@@ -63,10 +67,10 @@ btnConvert=Button(bottomframe,text="Convert", width=14, command=convert)
 btnCopy=Button(bottomframe,text="Copy String", width=14, command=copy)
 btnClose=Button(bottomframe,text="Close", width=14, command=close)
 
-btnPaste.pack(padx=5,pady=4, side="left", fill="x",expand=1)
-btnClear.pack(padx=5,pady=4,side="left", fill="x",expand=1)
-btnConvert.pack(padx=5,pady=4,side="left", fill="x",expand=1)
-btnCopy.pack(padx=5,pady=4,side="left", fill="x",expand=1)
-btnClose.pack(padx=5,pady=4,side="left", fill="x",expand=1)
+btnPaste.pack_configure(padx=5,pady=4, side="left", fill="x",expand=1)
+btnClear.pack_configure(padx=5,pady=4,side="left", fill="x",expand=1)
+btnConvert.pack_configure(padx=5,pady=4,side="left", fill="x",expand=1)
+btnCopy.pack_configure(padx=5,pady=4,side="left", fill="x",expand=1)
+btnClose.pack_configure(padx=5,pady=4,side="left", fill="x",expand=1)
 
 root.mainloop()
