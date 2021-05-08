@@ -1,7 +1,7 @@
-from tkinter2 import Tk
-from tkinter2 import Button
-from tkinter2 import Text
-from tkinter2 import Frame
+from tkinter import Tk
+from tkinter import Button
+from tkinter import Text
+from tkinter import Frame
 
 # test2String.py
 # a program to convert text a into formatted string 
@@ -67,10 +67,10 @@ btnConvert=Button(bottomframe,text="Convert", width=14, command=convert)
 btnCopy=Button(bottomframe,text="Copy String", width=14, command=copy)
 btnClose=Button(bottomframe,text="Close", width=14, command=close)
 
-btnPaste.pack_configure(padx=5,pady=4, side="left", fill="x",expand=1)
-btnClear.pack_configure(padx=5,pady=4,side="left", fill="x",expand=1)
-btnConvert.pack_configure(padx=5,pady=4,side="left", fill="x",expand=1)
-btnCopy.pack_configure(padx=5,pady=4,side="left", fill="x",expand=1)
-btnClose.pack_configure(padx=5,pady=4,side="left", fill="x",expand=1)
+btnPaste.pack(padx=5,pady=4, side="left", fill="x",expand=1)
+btnClear.pack(padx=5,pady=4,side="left", fill="x",expand=1)
+btnConvert.pack(padx=5,pady=4,side="left", fill="x",expand=1)
+btnCopy.pack(padx=5,pady=4,side="left", fill="x",expand=1)
+btnClose.pack(padx=5,pady=4,side="left", fill="x",expand=1)
 
 root.mainloop()
